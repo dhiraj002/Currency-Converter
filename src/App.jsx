@@ -23,6 +23,11 @@ function App() {
     setCnonvertedAmt(amount * currencyInfo[toAmt]);
   };
 
+  function clearAll() {
+    setCnonvertedAmt(0);
+    setAmount(0);
+  }
+
   return (
     <div
       className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
@@ -71,6 +76,13 @@ function App() {
               className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg"
             >
               Convert {fromAmt.toUpperCase()} to {toAmt.toUpperCase()}
+            </button>
+            <button
+              type="button"
+              className="w-full bg-red-500 text-white px-4 py-3 rounded-lg mt-2"
+              onClick={clearAll}
+            >
+              Clear
             </button>
           </form>
         </div>
